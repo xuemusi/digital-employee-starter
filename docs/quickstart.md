@@ -1,8 +1,20 @@
 # 快速开始：完成第一次真实派工
 
-适用 macOS/Linux；Windows 使用 WSL。先准备 Python 3.10+、make，以及已安装且授权可用的 Claude Code。本教程不安装全局角色，也不提供账户、凭据或第三方连接。
+## 先让 AI 带路
 
-## 1. 进入收到的起步包根目录
+拉取仓库后即可从本仓根目录打开已安装且授权可用的 Claude Code，不必先完成下面的手动安装。复制这一句话：
+
+```text
+请读取仓库根目录的 START-HERE.md，按首次使用流程带我完成环境检查、项目内安装和第一次数字员工任务；执行安装前先说明改动并征得我确认。
+```
+
+仓库自带的 [START-HERE.md](../START-HERE.md) 会指导 AI 先检查环境、说明改动并征得确认，再做项目内安装，最后核验岗位并让你选择任务。没有文件或命令工具的其他 AI 只能给步骤，不能声称已执行。
+
+## 以下为手动安装备用步骤
+
+适用 macOS/Linux；Windows 使用 WSL。手动路径需要 Python 3.10+、make，以及已安装且授权可用的 Claude Code。本教程不安装全局角色，也不提供账户、凭据或第三方连接。
+
+### 1. 进入收到的起步包根目录
 
 在终端打开 `digital-employee-starter/`，确认这里能看到 README.md、Makefile 和 agents/。下列命令均在此目录执行，每条单独运行；不需要写死个人路径。
 
@@ -52,9 +64,11 @@ make test PYTHON=.venv/bin/python
 
 请主会话核对三个岗位来自本项目，并具有真实 Agent 调用能力。岗位找不到就报告 blocked，先检查安装与当前目录；不要在同一上下文演三个人。
 
+打开仓库根目录的 [第一次使用提示词](../START-HERE.md)，将整段内容复制到新会话。它会先让 AI 检查环境，再按真实的岗位分工处理后续任务。
+
 ## 5. 跑一次虚构文稿任务
 
-打开 `examples/document-task/prompt.md`，把其中整段提示词复制到这个新会话。
+如果要跑虚构示例，打开 `examples/document-task/prompt.md`，把其中整段提示词复制到这个新会话；如果要处理自己的任务，先使用仓库根目录的 `START-HERE.md`。
 
 本例只处理 `examples/document-task/input.md` 的原创虚构信息；云模型读取本地材料时仍可能外发，不要夹带未授权资料。
 

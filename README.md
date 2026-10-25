@@ -4,6 +4,16 @@
 
 这是可供学员学习、定制与赠送前整理的通用仓库：三个员工、一份轻量协作协议、一个原创虚构示例。它不是服务端常驻平台，也没有自动后台调度。
 
+## 第一次打开，复制给AI
+
+拉取仓库后即可开始，不必先手动安装项目依赖。请在本仓根目录打开已安装且授权可用的 Claude Code，复制这一句话：
+
+```text
+请读取仓库根目录的 START-HERE.md，按首次使用流程带我完成环境检查、项目内安装和第一次数字员工任务；执行安装前先说明改动并征得我确认。
+```
+
+[START-HERE.md](START-HERE.md) 是仓库自带的 AI 操作协议。AI 会先检查、说明改动，获得你的确认后才安装；使用没有文件或命令工具的其他 AI 时，只能提供步骤，不能声称已经读取、安装或执行。
+
 ## 先分清四个概念
 
 | 概念 | 回答的问题 | 在本仓中的位置 |
@@ -30,6 +40,7 @@ planner 与 reviewer 只读；writer 才有写入与编辑工具。三个岗位�
 ```text
 digital-employee-starter/
 ├── README.md                     # 先读这里
+├── START-HERE.md                 # 第一次新开会话时复制给 AI 的提示词
 ├── CLAUDE.md                     # 本项目的协作边界
 ├── AGENTS.md                     # 相同核心边界，供其他工具参考
 ├── docs/quickstart.md            # 从环境准备到第一次派工
@@ -47,11 +58,14 @@ digital-employee-starter/
 
 ## 第一次使用
 
-1. 准备 Python 3.10+、make，以及已安装且授权可用的 Claude Code。
-2. 从仓库根目录按[快速开始](docs/quickstart.md)创建虚拟环境、安装依赖、检查和同步岗位。
-3. 第一次安装后，建议从仓库根新开 Claude Code 会话，这是较稳妥的发现方式；不代表每次更新都必须重启。
-4. 打开[示例提示词](examples/document-task/prompt.md)，复制到该新会话。
-5. 先确认需求，由主会话创建并检查 `output/document-task/` 后再派 writer；writer 不负责创建父目录。最后由你验收。
+1. 确认已安装且授权可用 Claude Code，从本仓库根目录打开会话。
+2. 复制上面的“一句话”给 AI，让它先读取 [START-HERE.md](START-HERE.md)，检查环境并说明项目内安装改动；不要先按手动教程安装。
+3. 你确认后，由 AI 在本仓创建或复用可用 `.venv/`，安装依赖、运行检查与测试，并同步到本项目 `.claude/agents/`；不会写 HOME 或安装全局岗位。
+4. 安装后由 AI 核验当前会话是否真实发现三个岗位；必要时再从本仓根目录新开会话，并用 [START-HERE.md](START-HERE.md) 中的续接句继续，不把命令成功当成岗位已就绪。
+5. 就绪后选择跑[虚构书店示例](examples/document-task/prompt.md)或自己的真实任务；主会话先确认需求、检查输出目录，再派 writer 和独立 reviewer，最后由你验收。
+6. 没有 Claude Code 文件或命令工具的其他 AI 只能给步骤，不能声称已经读取、安装或执行。
+
+手动安装、检查和同步步骤保留在[快速开始](docs/quickstart.md)中，作为备用教程。
 
 教程面向 macOS/Linux。Windows 学员请使用 WSL，本文不保证 Windows 原生命令环境完全兼容。
 
