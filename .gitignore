@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+.claude/agents/
+output/
+private/
+.env*
+!.env.example
+logs/
+*.log
+.omx/
+.DS_Store
